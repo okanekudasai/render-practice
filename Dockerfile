@@ -21,7 +21,4 @@ WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
 
 # Spring Boot 애플리케이션 실행
-ENTRYPOINT ["java", "-jar", "app.jar"]
-
-# 포트 설정 (스프링부트 기본 포트 8080)
-EXPOSE 8080
+ENTRYPOINT ["nohup", "java", "-jar", "app.jar", "&"]
