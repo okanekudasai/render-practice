@@ -8,6 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Gradle Wrapper를 사용하여 빌드 실행
+RUN chmod +x ./gradlew
 RUN ./gradlew build --no-daemon
 
 # 2. 실행을 위한 OpenJDK 17 이미지
